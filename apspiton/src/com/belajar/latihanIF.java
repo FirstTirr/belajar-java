@@ -1,7 +1,7 @@
 package com.belajar;
 import java.util.Scanner;
 
-public class latihan {
+public class latihanIF {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

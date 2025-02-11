@@ -11,19 +11,19 @@ public class latihan7 {
         System.out.println("----------");
         
         System.out.print("Email : ");
-        Email = Input.next();
+        Email = Input.nextLine();
         
         System.out.print("Nama : ");
-        Nama = Input.next();
+        Nama = Input.nextLine();
         
         System.out.print("Alamat : ");
-        Alamat = Input.next();
+        Alamat = Input.nextLine();
         
         System.out.print("NIP : ");
         NIP = Input.nextInt();
         
         //menampilkan data 
-        System.out.println("DATA SEKOLAH");
+        System.out.println("\nDATA SEKOLAH");
         System.out.println("----------");
 
         System.out.println("Email : " + Email);

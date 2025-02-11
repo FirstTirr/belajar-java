@@ -1,4 +1,4 @@
-package com;
+package com.belajar;
 import java.util.Scanner;
 public class latihan10 {
     public static void main(String[] args) {
@@ -6,9 +6,10 @@ public class latihan10 {
         double kopi = 15000;
         double susu = 16000;
         double teh= 5000;
+        double garam= 2000;
         Scanner  scanner = new Scanner(System.in);
 
-        System.out.println("gula, kopi, susu, teh");
+        System.out.println("gula, kopi, susu, teh, garam");
 
         System.out.print("pilih barang  : ");
         String pilihan = scanner.nextLine();
@@ -22,6 +23,8 @@ public class latihan10 {
             harga = kopi;
         } else if (pilihan.equals("susu")) {
             harga = susu;
+        } else if (pilihan.equals("garam")) {
+            harga = garam;
         } else {
             System.out.println("pilihan tidak valid ");
             scanner.close();
@@ -29,12 +32,12 @@ public class latihan10 {
         }
         System.out.println(pilihan + " = " + harga);
 
-        System.out.println("berapa? ");
+        System.out.print("berapa? ");
         double input = scanner.nextDouble();
 
         double output = input * harga;
 
-        System.out.println("output = " + output);
+        System.out.println("harga nya  = " + output);
 
         scanner.close();
     }

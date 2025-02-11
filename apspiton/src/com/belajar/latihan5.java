@@ -18,12 +18,24 @@ public class latihan5 {
                 pilihan = scanner.nextInt();
                 
                 switch (pilihan) {
-                    case 1 -> hitungLuasPersegi(scanner);
-                    case 2 -> hitungLuasPersegiPanjang(scanner);
-                    case 3 -> hitungLuasLingkaran(scanner);
-                    case 4 -> hitungLuasSegitiga(scanner);
-                    case 5 -> System.out.println("Terima kasih telah menggunakan program ini!");
-                    default -> System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+                    case 1:
+                     hitungLuasPersegi(scanner);
+                     break;
+                     case 2:
+                     hitungLuasPersegiPanjang(scanner);
+                     break;
+                     case 3:
+                     hitungLuasLingkaran(scanner);
+                     break;
+                     case 4:
+                     hitungLuasSegitiga(scanner);
+                     break;
+                     case 5:
+                     System.out.println("Terima kasih telah menggunakan program ini!");
+                     break;
+                     default:
+                     System.out.println("Pilihan tidak valid. Silakan coba lagi.");
+                     break;
                 }
                 System.out.println();
             } while (pilihan != 5);

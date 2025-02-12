@@ -31,6 +31,10 @@ public class latihan10 {
 
         Scanner scanner = new Scanner(System.in);
 
+        // Penyimpanan untuk transaksi
+        double totalHarga = 0;
+        StringBuilder struk = new StringBuilder();
+
         while (true) {
             System.out.println("\n--- Menu Belanja ---");
             System.out.println("01. gula (stok: " + stokGula + ")");
@@ -46,13 +50,9 @@ public class latihan10 {
             System.out.println("11. air mineral (stok: " + stokAirMineral + ")");
             System.out.println("00. Keluar");
 
-            // Penyimpanan untuk transaksi
-            double totalHarga = 0;
-            StringBuilder struk = new StringBuilder();
-
             // Pilihan barang
             while (true) {
-                System.out.print("\nPilih barang (Masukkan kode barang yang dipisah spasi, misalnya 01 02): ");
+                System.out.print("\nPilih barang : ");
                 String pilihan = scanner.nextLine();
 
                 if (pilihan.equals("00")) {
@@ -173,37 +173,40 @@ public class latihan10 {
                     System.out.println("Ada barang yang tidak tersedia, silakan pilih lagi.");
                 }
             }
-            
+
+            // Cek apakah total belanja lebih dari 150.000
+            double diskon = 0;
+            if (totalHarga > 150000) {
+                diskon = totalHarga * 0.10;  // Diskon 10%
+                totalHarga -= diskon;
+                System.out.println("Selamat! Anda mendapatkan diskon 10% sebesar: " + diskon);
+            }
+
             // Menanyakan jika pengguna ingin membeli lagi
             System.out.print("\nIngin membeli lagi? (y/n): ");
             String repeat = scanner.nextLine();
             if (repeat.equalsIgnoreCase("n")) {
-                
-            // Menampilkan struk belanja dan total harga
+                // Menampilkan struk belanja dan total harga
                 System.out.println("\n--- Struk Belanja ---");
-            System.out.println(struk.toString());
-            System.out.println("Total harga: " + totalHarga);
+                System.out.println(struk.toString());
+                System.out.println("Total harga setelah diskon: " + totalHarga);
 
-            // Proses pembayaran
-            System.out.print("Bayar berapa? ");
-            double payment = scanner.nextDouble();
-            scanner.nextLine(); // membersihkan buffer
+                // Proses pembayaran
+                System.out.print("Bayar berapa? ");
+                double payment = scanner.nextDouble();
+                scanner.nextLine(); // membersihkan buffer
 
-            double change = payment - totalHarga;
+                double change = payment - totalHarga;
 
-            if (change >= 0) {
-                System.out.println("Bayar: " + payment);
-                System.out.println("Kembalian: " + change);
-                System.out.println("Pembelian berhasil!");
-            } else {
-                System.out.println("Pembayaran kurang. Kembalian tidak dapat dihitung.");
-            }
+                if (change >= 0) {
+                    System.out.println("Bayar: " + payment);
+                    System.out.println("Kembalian: " + change);
+                    System.out.println("Pembelian berhasil!");
+                } else {
+                    System.out.println("Pembayaran kurang. Kembalian tidak dapat dihitung.");
+                }
                 break;
             }
-
-            
-            
-
         }
 
         scanner.close();

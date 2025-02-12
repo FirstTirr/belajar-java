@@ -5,8 +5,8 @@ public class latihan10 {
         double gula = 10000;
         double kopi = 15000;
         double susu = 16000;
-        double teh= 5000;
-        double garam= 2000;
+        double teh = 5000;
+        double garam = 2000;
         Scanner  scanner = new Scanner(System.in);
 
         System.out.println("gula, kopi, susu, teh, garam");

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class latihan10 {
     public static void main(String[] args) {
-        // Menyimpan harga dan stok barang
+
         double gula = 10000;
         double kopi = 15000;
         double susu = 16000;
@@ -15,146 +15,165 @@ public class latihan10 {
         double penghapus = 4000;
         double pensil_warna = 7500;
         double botol_minum = 30000;
+        double air_mineral = 2000;
 
-        int stokGula = 10;
-        int stokKopi = 5;
-        int stokSusu = 8;
-        int stokTeh = 15;
+        int stokGula = 17;
+        int stokKopi = 23;
+        int stokSusu = 20;
+        int stokTeh = 23;
         int stokGaram = 20;
         int stokPena = 30;
         int stokPensil = 25;
-        int stokPenghapus = 12;
-        int stokPensilWarna = 10;
-        int stokBotolMinum = 7;
+        int stokPenghapus = 22;
+        int stokPensilWarna = 30;
+        int stokBotolMinum = 17;
+        int stokAirMineral = 30;
 
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("\n--- Menu Belanja ---");
-            System.out.println("01. gula (stok: " + stokGula + ")");
-            System.out.println("02. kopi (stok: " + stokKopi + ")");
-            System.out.println("03. susu (stok: " + stokSusu + ")");
-            System.out.println("04. teh (stok: " + stokTeh + ")");
-            System.out.println("05. garam (stok: " + stokGaram + ")");
-            System.out.println("06. pena (stok: " + stokPena + ")");
-            System.out.println("07. pensil (stok: " + stokPensil + ")");
-            System.out.println("08. penghapus (stok: " + stokPenghapus + ")");
-            System.out.println("09. pensil warna (stok: " + stokPensilWarna + ")");
-            System.out.println("10. botol minum (stok: " + stokBotolMinum + ")");
-            System.out.println("00. Keluar");
+        System.out.println("\n--- Menu Belanja ---");
+        System.out.println("01. gula (stok: " + stokGula + ")");
+        System.out.println("02. kopi (stok: " + stokKopi + ")");
+        System.out.println("03. susu (stok: " + stokSusu + ")");
+        System.out.println("04. teh (stok: " + stokTeh + ")");
+        System.out.println("05. garam (stok: " + stokGaram + ")");
+        System.out.println("06. pena (stok: " + stokPena + ")");
+        System.out.println("07. pensil (stok: " + stokPensil + ")");
+        System.out.println("08. penghapus (stok: " + stokPenghapus + ")");
+        System.out.println("09. pensil warna (stok: " + stokPensilWarna + ")");
+        System.out.println("10. botol minum (stok: " + stokBotolMinum + ")");
+        System.out.println("11. air mineral (stok: " + stokAirMineral + ")");
+        System.out.println("00. Keluar");
 
-            System.out.print("Pilih barang: ");
-            String pilihan = scanner.nextLine();
+        System.out.print("Pilih barang: ");
+        String pilihan = scanner.nextLine();
 
-            if (pilihan.equals("00")) {
-                System.out.println("Terima kasih, sampai jumpa!");
-                break; // Keluar dari loop
-            }
+        if (pilihan.equals("00")) {
+            System.out.println("Terima kasih, sampai jumpa!");
+            scanner.close();
+            return;
+        }
 
-            double harga = 0;
-            int stokBarang = 0;
+        double harga = 0;
+        int stokBarang = 0;
+        String namaBarang = "";
 
-            // Menentukan harga dan stok berdasarkan pilihan
-            if (pilihan.equals("01")) {
-                harga = gula;
-                stokBarang = stokGula;
-            } else if (pilihan.equals("02")) {
-                harga = kopi;
-                stokBarang = stokKopi;
-            } else if (pilihan.equals("03")) {
-                harga = susu;
-                stokBarang = stokSusu;
-            } else if (pilihan.equals("04")) {
-                harga = teh;
-                stokBarang = stokTeh;
-            } else if (pilihan.equals("05")) {
-                harga = garam;
-                stokBarang = stokGaram;
-            } else if (pilihan.equals("06")) {
-                harga = pena;
-                stokBarang = stokPena;
-            } else if (pilihan.equals("07")) {
-                harga = pensil;
-                stokBarang = stokPensil;
-            } else if (pilihan.equals("08")) {
-                harga = penghapus;
-                stokBarang = stokPenghapus;
-            } else if (pilihan.equals("09")) {
-                harga = pensil_warna;
-                stokBarang = stokPensilWarna;
-            } else if (pilihan.equals("10")) {
-                harga = botol_minum;
-                stokBarang = stokBotolMinum;
-            } else {
-                System.out.println("Pilihan tidak valid.");
-                continue; // Kembali ke awal loop
-            }
+        if (pilihan.equals("01")) {
+            harga = gula;
+            stokBarang = stokGula;
+            namaBarang = "Gula";
+        } else if (pilihan.equals("02")) {
+            harga = kopi;
+            stokBarang = stokKopi;
+            namaBarang = "Kopi";
+        } else if (pilihan.equals("03")) {
+            harga = susu;
+            stokBarang = stokSusu;
+            namaBarang = "Susu";
+        } else if (pilihan.equals("04")) {
+            harga = teh;
+            stokBarang = stokTeh;
+            namaBarang = "Teh";
+        } else if (pilihan.equals("05")) {
+            harga = garam;
+            stokBarang = stokGaram;
+            namaBarang = "Garam";
+        } else if (pilihan.equals("06")) {
+            harga = pena;
+            stokBarang = stokPena;
+            namaBarang = "Pena";
+        } else if (pilihan.equals("07")) {
+            harga = pensil;
+            stokBarang = stokPensil;
+            namaBarang = "Pensil";
+        } else if (pilihan.equals("08")) {
+            harga = penghapus;
+            stokBarang = stokPenghapus;
+            namaBarang = "Penghapus";
+        } else if (pilihan.equals("09")) {
+            harga = pensil_warna;
+            stokBarang = stokPensilWarna;
+            namaBarang = "Pensil Warna";
+        } else if (pilihan.equals("10")) {
+            harga = botol_minum;
+            stokBarang = stokBotolMinum;
+            namaBarang = "Botol Minum";
+        } else if (pilihan.equals("11")) {
+            harga = air_mineral;
+            stokBarang = stokAirMineral;
+            namaBarang = "Air Mineral";
+        } else {
+            System.out.println("Pilihan tidak valid.");
+            scanner.close();
+            return;
+        }
 
-            // Menampilkan rincian barang yang dipilih
-            System.out.println("Anda memilih: " + pilihan);
-            System.out.println("Harga: " + harga);
-            System.out.println("Stok tersedia: " + stokBarang);
+        System.out.println("Anda memilih: " + namaBarang);
+        System.out.println("Harga: " + harga);
+        System.out.println("Stok tersedia: " + stokBarang);
 
-            // Meminta jumlah yang ingin dibeli
-            System.out.print("Berapa banyak yang ingin dibeli? ");
-            int jumlahBeli = scanner.nextInt();
-            scanner.nextLine(); // Clear newline character after nextInt()
+        System.out.print("Berapa banyak yang ingin dibeli? ");
+        int jumlahBeli = scanner.nextInt();
+        scanner.nextLine();
 
-            if (jumlahBeli > stokBarang) {
-                System.out.println("Stok tidak mencukupi. Stok yang tersedia: " + stokBarang);
-                continue; // Kembali ke awal loop
-            }
+        if (jumlahBeli > stokBarang) {
+            System.out.println("Stok tidak mencukupi. Stok yang tersedia: " + stokBarang);
+            scanner.close();
+            return;
+        }
 
-            // Menghitung total harga
-            double totalHarga = jumlahBeli * harga;
+        double totalHarga = jumlahBeli * harga;
+        System.out.println("Total harga: " + totalHarga);
+
+        System.out.print("Bayar berapa? ");
+        double payment = scanner.nextDouble();
+        scanner.nextLine();
+
+        double change = payment - totalHarga;
+
+        if (change >= 0) {
+            System.out.println("\n--- Struk Belanja ---");
+            System.out.println("Nama Barang: " + namaBarang);
+            System.out.println("Jumlah beli: " + jumlahBeli);
+            System.out.println("Harga per item: " + harga);
             System.out.println("Total harga: " + totalHarga);
+            System.out.println("Bayar: " + payment);
+            System.out.println("Kembalian: " + change);
+            System.out.println("Pembelian berhasil!");
 
-            // Meminta pembayaran
-            System.out.print("Bayar berapa? ");
-            double payment = scanner.nextDouble();
-            scanner.nextLine(); // Clear newline character after nextDouble()
-
-            // Menghitung kembalian
-            double change = payment - totalHarga;
-
-            // Menampilkan kembalian dan mengurangi stok
-            if (change >= 0) {
-                System.out.println("Kembalian: " + change);
-                System.out.println("Pembelian berhasil!");
-                // Mengurangi stok sesuai dengan jumlah yang dibeli
-                if (pilihan.equals("01")) {
-                    stokGula -= jumlahBeli;
-                } else if (pilihan.equals("02")) {
-                    stokKopi -= jumlahBeli;
-                } else if (pilihan.equals("03")) {
-                    stokSusu -= jumlahBeli;
-                } else if (pilihan.equals("04")) {
-                    stokTeh -= jumlahBeli;
-                } else if (pilihan.equals("05")) {
-                    stokGaram -= jumlahBeli;
-                } else if (pilihan.equals("06")) {
-                    stokPena -= jumlahBeli;
-                } else if (pilihan.equals("07")) {
-                    stokPensil -= jumlahBeli;
-                } else if (pilihan.equals("08")) {
-                    stokPenghapus -= jumlahBeli;
-                } else if (pilihan.equals("09")) {
-                    stokPensilWarna -= jumlahBeli;
-                } else if (pilihan.equals("10")) {
-                    stokBotolMinum -= jumlahBeli;
-                }
-                // Menampilkan stok barang yang tersisa
-                System.out.println("Stok yang tersisa: " + getStokBarang(pilihan, stokGula, stokKopi, stokSusu, stokTeh, stokGaram, stokPena, stokPensil, stokPenghapus, stokPensilWarna, stokBotolMinum));
-            } else {
-                System.out.println("Pembayaran kurang. Kembalian tidak dapat dihitung.");
+            if (pilihan.equals("01")) {
+                stokGula -= jumlahBeli;
+            } else if (pilihan.equals("02")) {
+                stokKopi -= jumlahBeli;
+            } else if (pilihan.equals("03")) {
+                stokSusu -= jumlahBeli;
+            } else if (pilihan.equals("04")) {
+                stokTeh -= jumlahBeli;
+            } else if (pilihan.equals("05")) {
+                stokGaram -= jumlahBeli;
+            } else if (pilihan.equals("06")) {
+                stokPena -= jumlahBeli;
+            } else if (pilihan.equals("07")) {
+                stokPensil -= jumlahBeli;
+            } else if (pilihan.equals("08")) {
+                stokPenghapus -= jumlahBeli;
+            } else if (pilihan.equals("09")) {
+                stokPensilWarna -= jumlahBeli;
+            } else if (pilihan.equals("10")) {
+                stokBotolMinum -= jumlahBeli;
+            } else if (pilihan.equals("11")) {
+                stokAirMineral -= jumlahBeli;
             }
+
+            System.out.println("Stok yang tersisa: " + getStokBarang(pilihan, stokGula, stokKopi, stokSusu, stokTeh, stokGaram, stokPena, stokPensil, stokPenghapus, stokPensilWarna, stokBotolMinum, stokAirMineral));
+        } else {
+            System.out.println("Pembayaran kurang. Kembalian tidak dapat dihitung.");
         }
 
         scanner.close();
     }
 
-    // Fungsi untuk mendapatkan stok barang yang tersisa
-    private static int getStokBarang(String pilihan, int stokGula, int stokKopi, int stokSusu, int stokTeh, int stokGaram, int stokPena, int stokPensil, int stokPenghapus, int stokPensilWarna, int stokBotolMinum) {
+    private static int getStokBarang(String pilihan, int stokGula, int stokKopi, int stokSusu, int stokTeh, int stokGaram, int stokPena, int stokPensil, int stokPenghapus, int stokPensilWarna, int stokBotolMinum, int stokAirMineral) {
         switch (pilihan) {
             case "01": return stokGula;
             case "02": return stokKopi;
@@ -166,6 +185,7 @@ public class latihan10 {
             case "08": return stokPenghapus;
             case "09": return stokPensilWarna;
             case "10": return stokBotolMinum;
+            case "11": return stokAirMineral;
             default: return 0;
         }
     }

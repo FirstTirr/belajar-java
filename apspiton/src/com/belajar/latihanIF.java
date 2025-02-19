@@ -2,6 +2,7 @@ package com.belajar;
 import java.util.Scanner;
 
 public class latihanIF {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

@@ -2,6 +2,7 @@ package com.belajar;
 import java.util.Scanner;
 
 public class latihan7 {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         //mengolah data sederhana dengan scanner
         int  NIP;
